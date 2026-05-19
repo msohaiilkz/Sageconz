@@ -1,0 +1,191 @@
+.sectors {
+  position: relative;
+  background: linear-gradient(to bottom, var(--bg-color), var(--bg-secondary));
+}
+
+.accordions-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Small gap instead of negative margin */
+  padding-bottom: 2rem;
+}
+
+.accordion-card {
+  position: sticky;
+  background: var(--bg-color); /* Use solid color to prevent messy bleed-through */
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.3);
+  transform-origin: top center;
+  transition: box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+[data-theme='light'] .accordion-card {
+  background: #ffffff; /* Solid white in light mode */
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.accordion-header h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.accordion-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.accordion-text p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.accordion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.accordion-card:hover .accordion-image img {
+  transform: scale(1.05);
+}
+
+.sector-badge {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+  .accordion-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .accordion-header h3 {
+    font-size: 1.8rem;
+  }
+  .accordion-card {
+    padding: 2rem;
+  }
+  .accordion-image {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .accordions-wrapper {
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .accordion-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .accordion-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .accordion-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .accordion-content {
+    gap: 1.5rem;
+  }
+
+  .accordion-text p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .accordion-image {
+    height: 200px;
+  }
+
+  .sector-badge {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accordions-wrapper {
+    gap: 1rem;
+    padding-bottom: 1rem;
+    max-width: 100%;
+  }
+
+  .accordion-card {
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+  }
+
+  .accordion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .accordion-header h3 {
+    font-size: 1rem;
+  }
+
+  .accordion-content {
+    gap: 1rem;
+  }
+
+  .accordion-text p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+
+  .accordion-image {
+    height: 160px;
+  }
+
+  .sector-badge {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
