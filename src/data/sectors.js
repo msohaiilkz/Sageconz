@@ -1,44 +1,125 @@
+import {
+  Anchor,
+  Building2,
+  Cog,
+  Cpu,
+  Fuel,
+  GraduationCap,
+  HeartPulse,
+  Landmark,
+  Network,
+  Package,
+  Plane,
+  Shirt,
+  Store,
+  Truck,
+  Zap,
+} from 'lucide-react';
+
 export const sectorsData = [
-  { 
-    id: 1, 
-    title: 'Business Management', 
-    desc: 'Leadership and strategic planning courses. Master the art of modern business administration and entrepreneurship.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    category: 'Business'
+  {
+    id: 1,
+    title: 'Textile',
+    desc: 'Consultancy, training, audits, and certification assistance tailored for textile production and quality systems.',
+    icon: Shirt,
+    category: 'Manufacturing',
   },
-  { 
-    id: 2, 
-    title: 'IT & Software', 
-    desc: 'Programming, web dev, and software engineering. Learn modern stacks including React, Node, and Python.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    category: 'Technology'
+  {
+    id: 2,
+    title: 'Civil and Construction',
+    desc: 'Operational support for construction planning, site quality, inspections, and compliance-driven project delivery.',
+    icon: Building2,
+    category: 'Infrastructure',
   },
-  { 
-    id: 3, 
-    title: 'Finance & Accounting', 
-    desc: 'Financial analysis, modeling, and accounting principles. Get certified in modern finance.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    category: 'Finance'
+  {
+    id: 3,
+    title: 'Engineering',
+    desc: 'Technical guidance, process improvement, and inspection support across multidisciplinary engineering environments.',
+    icon: Cog,
+    category: 'Technical',
   },
-  { 
-    id: 4, 
-    title: 'Digital Marketing', 
-    desc: 'SEO, social media strategy, and content marketing. Drive growth through digital channels.',
-    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    category: 'Marketing'
+  {
+    id: 4,
+    title: 'Medical and Health',
+    desc: 'Training, audits, and quality-focused consultancy for healthcare operations, devices, and service environments.',
+    icon: HeartPulse,
+    category: 'Healthcare',
   },
-  { 
-    id: 5, 
-    title: 'Design & UI/UX', 
-    desc: 'Create stunning user interfaces, graphic design, and user experience journeys.',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    category: 'Design'
+  {
+    id: 5,
+    title: 'Aviation',
+    desc: 'Structured support for aviation-related systems, standards, operational reviews, and workforce readiness.',
+    icon: Plane,
+    category: 'Transport',
   },
-  { 
-    id: 6, 
-    title: 'Cybersecurity', 
-    desc: 'Network security, ethical hacking, and advanced data protection protocols for modern enterprise.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    category: 'Technology'
+  {
+    id: 6,
+    title: 'Oil and Gas',
+    desc: 'Inspection, compliance, and operational excellence support for energy infrastructure and industrial workflows.',
+    icon: Fuel,
+    category: 'Energy',
+  },
+  {
+    id: 7,
+    title: 'Education',
+    desc: 'Capability-building services, training programs, and institutional support for academic and learning organizations.',
+    icon: GraduationCap,
+    category: 'Learning',
+  },
+  {
+    id: 8,
+    title: 'Shipping',
+    desc: 'Sector support for marine operations, shipping processes, audits, and performance-oriented consultancy.',
+    icon: Anchor,
+    category: 'Marine',
+  },
+  {
+    id: 9,
+    title: 'Power',
+    desc: 'Advisory and inspection services for power systems, utility operations, and energy continuity requirements.',
+    icon: Zap,
+    category: 'Utilities',
+  },
+  {
+    id: 10,
+    title: 'Technology',
+    desc: 'Support for digital operations, systems quality, technical teams, and evolving technology-driven organizations.',
+    icon: Cpu,
+    category: 'Digital',
+  },
+  {
+    id: 11,
+    title: 'Food and Food Packaging',
+    desc: 'Quality, safety, and process consultancy for food production lines and packaging-driven supply chains.',
+    icon: Package,
+    category: 'Consumer',
+  },
+  {
+    id: 12,
+    title: 'Hospitality',
+    desc: 'Service quality, training, and operational refinement for guest-facing hospitality businesses and teams.',
+    icon: Store,
+    category: 'Service',
+  },
+  {
+    id: 13,
+    title: 'Transportation and Logistics',
+    desc: 'Performance support for fleet operations, logistics planning, movement controls, and delivery ecosystems.',
+    icon: Truck,
+    category: 'Logistics',
+  },
+  {
+    id: 14,
+    title: 'Network and Distributors',
+    desc: 'Consultancy and process support for distribution networks, partner ecosystems, and channel operations.',
+    icon: Network,
+    category: 'Distribution',
+  },
+  {
+    id: 15,
+    title: 'Financial Institutions',
+    desc: 'Operational, compliance, and training support for banking, finance, and institutional governance needs.',
+    icon: Landmark,
+    category: 'Finance',
   },
 ];

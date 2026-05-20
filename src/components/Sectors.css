@@ -65,18 +65,32 @@
   height: 300px;
   border-radius: 16px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(132, 155, 115, 0.25), transparent 55%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(132, 155, 115, 0.08));
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.accordion-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+.accordion-icon-shell {
+  width: 136px;
+  height: 136px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 5, 0.35);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-.accordion-card:hover .accordion-image img {
-  transform: scale(1.05);
+.accordion-icon-shell svg {
+  width: 72px;
+  height: 72px;
+  color: var(--accent-color);
+  stroke-width: 1.8;
 }
 
 .sector-badge {
@@ -103,6 +117,17 @@
   }
   .accordion-image {
     height: 220px;
+  }
+
+  .accordion-icon-shell {
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
+  }
+
+  .accordion-icon-shell svg {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -137,6 +162,17 @@
 
   .accordion-image {
     height: 200px;
+  }
+
+  .accordion-icon-shell {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+  }
+
+  .accordion-icon-shell svg {
+    width: 52px;
+    height: 52px;
   }
 
   .sector-badge {
@@ -182,6 +218,17 @@
 
   .accordion-image {
     height: 160px;
+  }
+
+  .accordion-icon-shell {
+    width: 82px;
+    height: 82px;
+    border-radius: 20px;
+  }
+
+  .accordion-icon-shell svg {
+    width: 44px;
+    height: 44px;
   }
 
   .sector-badge {

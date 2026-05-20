@@ -4,20 +4,12 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
 import ClientsSection from '../components/ClientsSection';
+import { clientsData } from '../data/clients';
 import PageHero from '../components/PageHero';
 import AnimatedText from '../components/AnimatedText';
 import './ClientsPage.css';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const clientLogos = [
-  { name: "Oracle", url: "oracle.com" },
-  { name: "IBM", url: "ibm.com" },
-  { name: "Salesforce", url: "salesforce.com" },
-  { name: "SAP", url: "sap.com" },
-  { name: "Accenture", url: "accenture.com" },
-  { name: "Deloitte", url: "deloitte.com" }
-];
 
 const ClientsPage = () => {
   const pageRef = useRef(null);
@@ -26,7 +18,7 @@ const ClientsPage = () => {
     const ctx = gsap.context(() => {
       gsap.from('.stat-card', {
         scrollTrigger: {
-          trigger: '.stats-grid',
+          trigger: '.clients-stats-grid',
           start: 'top 80%'
         },
         y: 40,
@@ -34,18 +26,6 @@ const ClientsPage = () => {
         duration: 0.8,
         stagger: 0.15,
         ease: 'power3.out'
-      });
-
-      gsap.from('.logo-box', {
-        scrollTrigger: {
-          trigger: '.logos-grid',
-          start: 'top 85%'
-        },
-        scale: 0.8,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: 'back.out(1.5)'
       });
     }, pageRef);
     return () => ctx.revert();
@@ -84,38 +64,19 @@ const ClientsPage = () => {
 
       {/* Modern Logo Grid */}
       <div className="container logos-section">
-        <div className="section-header-left" style={{ marginBottom: '4rem' }}>
+        <div className="section-header-left logos-header">
           <span className="section-subtitle">Network</span>
           <h2 className="section-title">Forward-Thinking Enterprises</h2>
         </div>
 
         <div className="logos-grid">
-          {clientLogos.map((logo, idx) => (
-            <div key={idx} className="logo-box glass-card" style={{
-              height: '150px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: '20px',
-              transition: 'all 0.3s ease',
-              cursor: 'pointer',
-              padding: '2rem'
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-color)'}
-            onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--glass-border)'}
-            >
-              <img 
-                src={`https://logo.clearbit.com/${logo.url}`} 
-                alt={logo.name} 
-                style={{ height: '50px', width: '100%', objectFit: 'contain', filter: 'grayscale(100%) brightness(200%)' }}
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.parentElement.innerText = logo.name;
-                  e.target.parentElement.style.fontSize = '1.5rem';
-                  e.target.parentElement.style.fontWeight = '800';
-                  e.target.parentElement.style.color = 'var(--text-secondary)';
-                }}
-              />
+          {clientsData.map((client, idx) => (
+            <div key={idx} className="logo-box glass-card client-card">
+              <img src={client.logo} alt={client.name} className="client-card-art" />
+              <div className="client-card-copy">
+                <h3>{client.name}</h3>
+                <p>{client.subtitle}</p>
+              </div>
             </div>
           ))}
         </div>

@@ -27,14 +27,14 @@ const SectorsPage = () => {
   return (
     <div className="page-container" style={{ minHeight: '80vh' }}>
       <PageHero 
-        title="Sectors & Courses" 
-        subtitle="Explore Our Expertise"
-        image="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+        title="Our Sectors" 
+        subtitle="Sageconz Industry Coverage"
+        image="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1920&q=80" 
       />
       <div className="container" style={{ paddingBottom: '6rem' }}>
         <div style={{ textAlign: 'left', marginBottom: '4rem' }}>
-          <span className="section-subtitle">Our Disciplines</span>
-          <AnimatedText text="Explore Sectors" className="section-title" />
+          <span className="section-subtitle">Sectors</span>
+          <AnimatedText text="Our Sectors Existence" className="section-title" />
           {query && (
             <p style={{ color: 'var(--accent-color)', fontSize: '1.2rem', marginTop: '1rem' }}>
               Search results for: "{query}"
@@ -49,28 +49,31 @@ const SectorsPage = () => {
         ) : (
           <div className="modern-sectors-grid">
             <AnimatePresence>
-              {filteredSectors.map((sector) => (
-                <motion.div 
-                  key={sector.id}
-                  className="modern-sector-card glass-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  layout
-                >
-                  <div className="sector-image">
-                    <img src={sector.image} alt={sector.title} />
-                    <span className="sector-badge">{sector.category}</span>
-                  </div>
-                  <div className="sector-content">
-                    <h3>{sector.title}</h3>
-                    <p>{sector.desc}</p>
-                    <button className="btn btn-primary" style={{ marginTop: 'auto', alignSelf: 'flex-start', padding: '0.8rem 1.5rem', fontSize: '0.9rem' }}>
-                      Learn More
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
+              {filteredSectors.map((sector) => {
+                const Icon = sector.icon;
+
+                return (
+                  <motion.div
+                    key={sector.id}
+                    className="modern-sector-card glass-card"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    layout
+                  >
+                    <div className="sector-image sector-icon-panel">
+                      <div className="sector-icon-shell" aria-hidden="true">
+                        <Icon />
+                      </div>
+                      <span className="sector-badge">{sector.category}</span>
+                    </div>
+                    <div className="sector-content">
+                      <h3>{sector.title}</h3>
+                      <p>{sector.desc}</p>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
           </div>
         )}

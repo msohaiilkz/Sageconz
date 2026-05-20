@@ -40,35 +40,41 @@ const Sectors = ({ limit }) => {
     <section className="sectors" id="sectors" ref={containerRef} style={{ padding: '100px 0', overflow: 'visible' }}>
       <div className="container">
         <div className="sectors-header" style={{ textAlign: 'left', marginBottom: '4rem' }}>
-          <span className="section-subtitle">Our Expertise</span>
-          <AnimatedText text="Featured Sectors" className="section-title" />
+          <span className="section-subtitle">Sectors</span>
+          <AnimatedText text="Our Sectors Existence" className="section-title" />
         </div>
         
         <div className="accordions-wrapper">
-          {displayData.map((sector, index) => (
-            <div 
-              key={sector.id} 
-              className="accordion-card"
-              style={{ top: `calc(10% + ${index * 20}px)` }} // Slight offset so they look like a deck of cards
-            >
-              <div className="accordion-header">
-                <h3>{sector.title}</h3>
-                <span className="sector-badge">{sector.category}</span>
-              </div>
-              
-              <div className="accordion-content">
-                <div className="accordion-text">
-                  <p>{sector.desc}</p>
-                  <Link to="/sectors" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
-                    Learn More
-                  </Link>
+          {displayData.map((sector, index) => {
+            const Icon = sector.icon;
+
+            return (
+              <div
+                key={sector.id}
+                className="accordion-card"
+                style={{ top: `calc(10% + ${index * 20}px)` }} // Slight offset so they look like a deck of cards
+              >
+                <div className="accordion-header">
+                  <h3>{sector.title}</h3>
+                  <span className="sector-badge">{sector.category}</span>
                 </div>
-                <div className="accordion-image">
-                  <img src={sector.image} alt={sector.title} />
+
+                <div className="accordion-content">
+                  <div className="accordion-text">
+                    <p>{sector.desc}</p>
+                    <Link to="/sectors" className="btn btn-primary" style={{ marginTop: '1.5rem', display: 'inline-flex' }}>
+                      View Sector List
+                    </Link>
+                  </div>
+                  <div className="accordion-image" aria-hidden="true">
+                    <div className="accordion-icon-shell">
+                      <Icon />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         
         {limit && (

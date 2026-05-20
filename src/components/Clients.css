@@ -20,14 +20,14 @@
 
 .client-logo {
   padding: 1.5rem 3rem;
-  border-radius: 12px;
+  border-radius: 18px;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 200px;
+  min-width: 360px;
   transition: var(--transition);
   cursor: pointer;
 }
@@ -36,6 +36,36 @@
   color: var(--text-primary);
   border-color: var(--accent-color);
   background: rgba(132, 155, 115, 0.05);
+}
+
+.client-logo-art {
+  width: 108px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--glass-border);
+  flex-shrink: 0;
+}
+
+.client-logo-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.client-logo-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.client-logo-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.35;
 }
 
 @media (max-width: 768px) {
@@ -49,14 +79,27 @@
   }
 
   .client-logo {
-    padding: 1.25rem 2rem;
-    font-size: 1.2rem;
-    min-width: 160px;
+    padding: 1rem 1.1rem;
+    min-width: 300px;
   }
 
   .marquee-container {
     -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
     mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  }
+
+  .client-logo-art {
+    width: 90px;
+    height: 60px;
+    border-radius: 12px;
+  }
+
+  .client-logo-name {
+    font-size: 1rem;
+  }
+
+  .client-logo-subtitle {
+    font-size: 0.72rem;
   }
 }
 
@@ -71,14 +114,27 @@
   }
 
   .client-logo {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    min-width: 130px;
+    padding: 0.9rem 1rem;
+    min-width: 260px;
     border-radius: 8px;
   }
 
   .marquee-container {
     -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
     mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+  }
+
+  .client-logo-art {
+    width: 78px;
+    height: 52px;
+    border-radius: 10px;
+  }
+
+  .client-logo-name {
+    font-size: 0.92rem;
+  }
+
+  .client-logo-subtitle {
+    font-size: 0.68rem;
   }
 }

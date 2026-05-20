@@ -1,17 +1,6 @@
 import { motion } from 'framer-motion';
-import { Box, Hexagon, Triangle, Circle, Command, Infinity as InfinityIcon, Aperture, Globe } from 'lucide-react';
+import { clientsData } from '../data/clients';
 import './Clients.css';
-
-const clients = [
-  { name: "TechCorp", Icon: Box },
-  { name: "FinanceHub", Icon: Hexagon },
-  { name: "GrowthGen", Icon: Triangle },
-  { name: "InnovateX", Icon: Command },
-  { name: "GlobalSynergy", Icon: Globe },
-  { name: "NextEra", Icon: InfinityIcon },
-  { name: "Quantum", Icon: Aperture },
-  { name: "Nexus", Icon: Circle }
-];
 
 const ClientsSection = () => {
   return (
@@ -32,18 +21,19 @@ const ClientsSection = () => {
               duration: 20 
             }}
           >
-            {[...clients, ...clients, ...clients].map((client, idx) => (
+            {[...clientsData, ...clientsData].map((client, idx) => (
               <div key={idx} className="client-logo glass" style={{ 
-                padding: '1rem 2rem', 
+                padding: '1rem 1.25rem', 
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center',
                 gap: '1rem'
               }}>
-                <client.Icon size={32} color="var(--accent-color)" strokeWidth={2.5} />
-                <span style={{ fontSize: '1.8rem', fontWeight: '800', color: 'var(--text-primary)', letterSpacing: '-0.5px' }}>
-                  {client.name}
-                </span>
+                <img src={client.logo} alt={client.name} className="client-logo-art" />
+                <div className="client-logo-copy">
+                  <span className="client-logo-name">{client.name}</span>
+                  <span className="client-logo-subtitle">{client.subtitle}</span>
+                </div>
               </div>
             ))}
           </motion.div>
