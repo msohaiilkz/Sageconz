@@ -9,6 +9,8 @@
   --accent-hover: #98ad88;
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --header-bg: rgba(5, 5, 5, 0.82);
+  --header-scrolled-bg: rgba(5, 5, 5, 0.55);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --menu-bg: #0d0d0d;
   --active-link-bg: rgba(132, 155, 115, 0.18);
@@ -24,6 +26,8 @@
   --accent-hover: #4a5c36;
   --glass-bg: rgba(255, 255, 255, 0.6);
   --glass-border: rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(248, 250, 252, 0.9);
+  --header-scrolled-bg: rgba(248, 250, 252, 0.72);
   --menu-bg: #ffffff;
   --active-link-bg: rgba(92, 116, 68, 0.12);
   --active-link-border: rgba(92, 116, 68, 0.4);

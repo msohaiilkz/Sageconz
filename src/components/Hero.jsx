@@ -1,8 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { Play } from 'lucide-react';
-import AnimatedText from './AnimatedText';
 import './Hero.css';
 
 const Hero = () => {

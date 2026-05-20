@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import AnimatedText from '../components/AnimatedText';
 import PageHero from '../components/PageHero';

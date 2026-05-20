@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -6,15 +6,13 @@ import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import SectorsPage from './pages/SectorsPage';
 import ClientsPage from './pages/ClientsPage';
-import ContactPage from './pages/ContactPage';
 import ContactSection from './components/ContactSection';
 import BackToTop from './components/BackToTop';
+import { ThemeContext } from './contexts/ThemeContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
-
-export const ThemeContext = createContext(null);
 
 function App() {
   const location = useLocation();

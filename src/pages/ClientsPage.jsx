@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Globe2 } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import ClientsSection from '../components/ClientsSection';
 import PageHero from '../components/PageHero';
 import AnimatedText from '../components/AnimatedText';

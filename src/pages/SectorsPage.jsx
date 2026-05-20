@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sectorsData } from '../data/sectors';
@@ -9,21 +9,19 @@ const SectorsPage = () => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
   
-  const [filteredSectors, setFilteredSectors] = useState(sectorsData);
-
-  useEffect(() => {
-    if (query) {
-      const lowerQ = query.toLowerCase();
-      setFilteredSectors(
-        sectorsData.filter(s => 
-          s.title.toLowerCase().includes(lowerQ) || 
-          s.desc.toLowerCase().includes(lowerQ) ||
-          s.category.toLowerCase().includes(lowerQ)
-        )
-      );
-    } else {
-      setFilteredSectors(sectorsData);
+  const filteredSectors = useMemo(() => {
+    if (!query) {
+      return sectorsData;
     }
+
+    const lowerQuery = query.toLowerCase();
+
+    return sectorsData.filter(
+      (sector) =>
+        sector.title.toLowerCase().includes(lowerQuery) ||
+        sector.desc.toLowerCase().includes(lowerQuery) ||
+        sector.category.toLowerCase().includes(lowerQuery)
+    );
   }, [query]);
 
   return (

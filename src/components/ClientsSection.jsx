@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Box, Hexagon, Triangle, Circle, Command, Infinity, Aperture, Globe } from 'lucide-react';
+import { Box, Hexagon, Triangle, Circle, Command, Infinity as InfinityIcon, Aperture, Globe } from 'lucide-react';
 import './Clients.css';
 
 const clients = [
@@ -9,7 +8,7 @@ const clients = [
   { name: "GrowthGen", Icon: Triangle },
   { name: "InnovateX", Icon: Command },
   { name: "GlobalSynergy", Icon: Globe },
-  { name: "NextEra", Icon: Infinity },
+  { name: "NextEra", Icon: InfinityIcon },
   { name: "Quantum", Icon: Aperture },
   { name: "Nexus", Icon: Circle }
 ];

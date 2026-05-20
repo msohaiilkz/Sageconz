@@ -1,10 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
-import { ThemeContext } from '../App';
+import { useState, useEffect } from 'react';
 import './BackToTop.css';
 
 function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const { theme } = useContext(ThemeContext);
 
   const toggleVisibility = () => {
     if (window.pageYOffset > 300) {

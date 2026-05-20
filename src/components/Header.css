@@ -6,13 +6,16 @@
   z-index: 1000;
   transition: var(--transition);
   padding: 1.5rem 0;
-  background: transparent;
+  background: var(--header-bg);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .header.scrolled {
   padding: 1rem 0;
   border-bottom: 1px solid var(--glass-border);
-  background: var(--glass-bg);
+  background: var(--header-scrolled-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -149,6 +152,8 @@
   border-bottom: 1px solid var(--glass-border);
   overflow: hidden;
   background: var(--menu-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   z-index: 999;
 }
