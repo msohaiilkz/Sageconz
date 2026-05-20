@@ -1,16 +1,16 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import About from '../components/About';
+import AboutSection from '../components/AboutSection';
 import Sectors from '../components/Sectors';
-import Clients from '../components/Clients';
+import ClientsSection from '../components/ClientsSection';
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <About />
+      <AboutSection />
       <Sectors limit={3} />
-      <Clients />
+      <ClientsSection />
     </>
   );
 };

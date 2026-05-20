@@ -7,7 +7,7 @@ import AboutPage from './pages/AboutPage';
 import SectorsPage from './pages/SectorsPage';
 import ClientsPage from './pages/ClientsPage';
 import ContactPage from './pages/ContactPage';
-import Contact from './components/Contact';
+import ContactSection from './components/ContactSection';
 import BackToTop from './components/BackToTop';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -43,7 +43,7 @@ function App() {
             <Route path="/clients" element={<ClientsPage />} />
           </Routes>
         </main>
-        <Contact />
+        <ContactSection />
         <Footer />
         <BackToTop />
       </div>

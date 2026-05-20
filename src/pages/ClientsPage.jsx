@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Globe2 } from 'lucide-react';
-import Clients from '../components/Clients';
+import ClientsSection from '../components/ClientsSection';
 import PageHero from '../components/PageHero';
 import AnimatedText from '../components/AnimatedText';
 import './ClientsPage.css';
@@ -80,7 +80,7 @@ const ClientsPage = () => {
         </div>
       </div>
 
-      <Clients />
+      <ClientsSection />
 
       {/* Modern Logo Grid */}
       <div className="container logos-section">
