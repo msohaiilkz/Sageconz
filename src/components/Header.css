@@ -6,11 +6,15 @@
   z-index: 1000;
   transition: var(--transition);
   padding: 1.5rem 0;
+  background: transparent;
 }
 
 .header.scrolled {
   padding: 1rem 0;
   border-bottom: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .header-content {
